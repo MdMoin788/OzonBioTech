@@ -1,0 +1,43 @@
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background:#00897b;
+  padding: .5em;
+  position: sticky;
+  width: 100%;
+  top: 0;
+  a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    font-size: 1em;
+  }
+  input {
+    width: 300px;
+    padding: 0.5em;
+    padding-left: 1em;
+    border: none;
+    outline: none;
+  }
+  .profile-container  {
+    position: relative;
+    color: white;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    a {
+    }
+    .profile-card {
+      display: none;
+    }
+    &:hover {
+     .profile-card {
+      position: absolute;
+      z-index: 5;
+      display: flex;
+      }
+    }
+  }
+}

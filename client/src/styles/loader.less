@@ -1,0 +1,21 @@
+
+.loader {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  div {
+    width: 5em;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border-bottom: 5px solid rgb(110, 110, 110);
+    animation: loadingIcon 300ms linear infinite;
+  }
+}
+
+@keyframes loadingIcon {
+  to {
+    transform: rotateZ(360deg);
+  }
+}

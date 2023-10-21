@@ -1,0 +1,126 @@
+.product-detail {
+  .product-detail-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // border: 1px solid black;
+    padding: 2em;
+    width: 100%;
+
+    .product-detail-left {
+      width: 50%;
+      // border: 1px solid black;
+
+      .slider {
+        width: 100%;
+        // margin: 0 auto;
+        text-align: center;
+
+        img {
+          width: 50%;
+          aspect-ratio: 0.8;
+        }
+      }
+    }
+
+    .product-detail-right {
+      width: 50%;
+      // border: 1px solid black;
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+
+      .subscribe {}
+
+      .product-id {}
+
+      .star-review {
+        justify-content: start;
+
+        .product-star-rating {}
+
+        .product-review {}
+      }
+
+      .price {}
+
+      .qty-add-to-cart-section {
+        display: flex;
+        gap: 10px;
+
+        .qty-cont {
+          display: flex;
+          align-items: center;
+
+          button {
+            border: none;
+            // border: 1px solid black;
+            outline: none;
+            width: 25px;
+            aspect-ratio: 1;
+          }
+
+          input {
+            border: none;
+            // border: 1px solid black;
+            outline: none;
+            width: 20px;
+            aspect-ratio: 1;
+            text-align: center;
+          }
+        }
+
+        .add-to-cart-btn {
+          width: 30%;
+          font-size: 12px;
+          padding: 0.8em;
+          white-space: nowrap;
+        }
+      }
+
+      .stock-status {
+        p {
+          span {
+            font-weight: 600;
+            color: green;
+          }
+        }
+      }
+
+      .product-description {
+        h3 {}
+
+        p {}
+      }
+
+    }
+  }
+
+  .product-detail-bottom {
+    padding: 2em;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    h3 {
+      text-align: center;
+      width: 20vw;
+      border-bottom: 2px solid black;
+      padding-bottom: 0.5em;
+      margin: auto;
+    }
+    .reviews-cont {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      // border: 1px solid black;
+      width: 100%;
+      gap: 1em;
+      // flex-wrap: wrap;
+      overflow: auto;
+    }
+    .no-reviews-cont {
+      text-align:start;
+    }
+  }
+}
