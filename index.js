@@ -31,7 +31,7 @@ app.use(bodyParser.urlencoded({extended:true}))
 
 app.use('/api/v1', productRoute)
 app.use('/api/v1', userRoute)
-app.all('*', (req, res, next)=>next(new ErrorHandler('Routes not available', 404)))
+// app.all('*', (req, res, next)=>next(new ErrorHandler('Routes not available', 404)))
 
 app.use(errorMiddleware)
 
