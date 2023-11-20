@@ -74,11 +74,15 @@ export const deleteProduct = async (req, res, next) => {
 // Delete a Product only Admin
 export const uniqueDeviceIndentifier = async (req, res, next) => {
   try {
-    const data = await si.system()
-      .then((data) => {
-        return { device_details: data, serial_number: data.serial, device_uuid: data.uuid }
-      })
-      .catch((error) => console.error(error));
+    const motherboardInfo = await si.baseboard();
+    const { serial, uuid } = motherboardInfo;
+
+    const data = {
+      device_details: motherboardInfo,
+      serial_number: serial,
+      device_uuid: uuid,
+    };
+
 
 
     return res.status(200).json({ status: 201, device_information: data, msg: 'Fetched Successfully...' })
