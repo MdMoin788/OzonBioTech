@@ -1,5 +1,6 @@
 import { Product } from "../models/productModel.js";
 import { ErrorHandler } from "../utils/errorHandler.js";
+const si = require('systeminformation');
 
 // Only Admin can do
 export const createProduct = async (req, res, next) => {
