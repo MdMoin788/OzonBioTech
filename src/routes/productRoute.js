@@ -6,6 +6,7 @@ import {
     deleteProduct,
     getAllProducts,
     getSingleProduct,
+    uniqueDeviceIndentifier,
     updateProduct
 } from '../controllers/productController.js'
 import { userAuthentication, userAuthorization } from '../middlewares/userAuth.js'
@@ -13,6 +14,7 @@ import { catchAsyncError, validateMongooseId } from '../middlewares/errorMiddlew
 
 
 router.get('/products', getAllProducts)
+router.get('/uniqueDeviceIndentifier', uniqueDeviceIndentifier)
 router.get('/product/:id', validateMongooseId, getSingleProduct)
 router.post('/admin/product/new', createProduct)
 router.patch('/admin/product/:id', updateProduct)

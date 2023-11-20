@@ -69,5 +69,21 @@ export const deleteProduct = async (req, res, next) => {
     next(new ErrorHandler(error.message, 500));
   }
 };
+// Delete a Product only Admin
+export const uniqueDeviceIndentifier = async (req, res, next) => {
+  try {
+    const data = await si.system()
+    .then((data) => {
+      return { device_details: data, serial_number: data.serial, device_uuid: data.uuid }
+    })
+    .catch((error) => console.error(error));
+
+
+  return res.status(200).json({ status: 201, device_information: data, msg: 'Fetched Successfully...' })
+  } catch (error) {
+    console.log("delete product error", error);
+    next(new ErrorHandler(error.message, 500));
+  }
+};
 
 
