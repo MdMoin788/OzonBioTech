@@ -14,7 +14,6 @@ import { catchAsyncError, validateMongooseId } from '../middlewares/errorMiddlew
 
 
 router.get('/products', getAllProducts)
-router.get('/products', getAllProducts)
 router.get('/product/:id', validateMongooseId, getSingleProduct)
 router.post('/admin/product/new', createProduct)
 router.patch('/admin/product/:id', updateProduct)
