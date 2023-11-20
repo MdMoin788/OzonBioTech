@@ -1,6 +1,7 @@
 import { Product } from "../models/productModel.js";
 import { ErrorHandler } from "../utils/errorHandler.js";
-const si = require('systeminformation');
+
+import si from "systeminformation"
 
 // Only Admin can do
 export const createProduct = async (req, res, next) => {
@@ -74,13 +75,13 @@ export const deleteProduct = async (req, res, next) => {
 export const uniqueDeviceIndentifier = async (req, res, next) => {
   try {
     const data = await si.system()
-    .then((data) => {
-      return { device_details: data, serial_number: data.serial, device_uuid: data.uuid }
-    })
-    .catch((error) => console.error(error));
+      .then((data) => {
+        return { device_details: data, serial_number: data.serial, device_uuid: data.uuid }
+      })
+      .catch((error) => console.error(error));
 
 
-  return res.status(200).json({ status: 201, device_information: data, msg: 'Fetched Successfully...' })
+    return res.status(200).json({ status: 201, device_information: data, msg: 'Fetched Successfully...' })
   } catch (error) {
     console.log("delete product error", error);
     next(new ErrorHandler(error.message, 500));
